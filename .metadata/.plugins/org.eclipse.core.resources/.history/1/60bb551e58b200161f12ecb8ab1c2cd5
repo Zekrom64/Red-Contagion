@@ -1,0 +1,42 @@
+package com.redcontagion.item;
+
+public class Item {
+	
+	/** The maximum number of possible items */
+	public static final int MAX_ITEMS = 65535;
+	private static Item[] items = new Item[MAX_ITEMS];
+	private static int nextItem = 0;
+	
+	public static Item getItem(int id) {
+		if (id <= 0) return null;
+		return items[id];
+	}
+	
+	public static Item getItem(String unlocName) {
+		for(Item i : items) {
+			if (i == null) return null; // End of entries has been reached, no need to go further
+			if (i.UNLOCALIZED_NAME.equals(unlocName)) return i;
+		}
+		return null;
+	}
+	
+	public final String UNLOCALIZED_NAME;
+	public final int ITEM_ID;
+	
+	public Item(String unlocName) {
+		if (unlocName==null) throw new IllegalArgumentException("Item cannot have null unlocalized name");
+		UNLOCALIZED_NAME = unlocName;
+		if (nextItem==items.length) throw new IllegalStateException("Out of item IDs");
+		ITEM_ID = nextItem++;
+		items[ITEM_ID] = this;
+	}
+	
+	public boolean hasMetadata() {
+		return false;
+	}
+	
+	public int getMaxStackSize(int meta) {
+		return 100;
+	}
+	
+}

@@ -1,0 +1,7 @@
+package com.redcontagion.world;
+
+public class Chunk {
+
+	private int[] data = new int[4096];
+	
+}

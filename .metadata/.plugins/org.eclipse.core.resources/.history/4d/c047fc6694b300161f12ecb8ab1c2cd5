@@ -1,0 +1,8 @@
+package com.redcontagion.world;
+
+import com.redcontagion.world.voxel.Block;
+
+public class WorldLocal {
+	
+	
+}

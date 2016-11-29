@@ -1,0 +1,9 @@
+package com.redcontagion.world;
+
+public class World {
+
+	public int getMetadata(int x, int y, int z) {
+		
+	}
+	
+}

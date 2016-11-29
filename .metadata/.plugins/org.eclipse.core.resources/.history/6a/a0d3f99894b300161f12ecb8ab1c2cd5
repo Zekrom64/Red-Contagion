@@ -1,0 +1,83 @@
+package com.redcontagion.world;
+
+import com.redcontagion.world.voxel.Block;
+
+public class WorldLocal implements IWorld {
+	
+	private class ChunkLocal implements IChunk {
+		
+		private int[] data = new int[4096];
+
+		@Override
+		public int[] get() {
+			return data;
+		}
+		
+	}
+
+	@Override
+	public int get(int x, int y, int z) {
+		return 0;
+	}
+
+	@Override
+	public void set(int x, int y, int z, int data) {
+		
+	}
+
+	@Override
+	public int getBlockID(int x, int y, int z) {
+		return 0;
+	}
+
+	@Override
+	public void setBlockID(int x, int y, int z, int id) {
+		
+	}
+
+	@Override
+	public Block getBlock(int x, int y, int z) {
+		return null;
+	}
+
+	@Override
+	public void setBlock(int x, int y, int z, Block b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getDamage(int x, int y, int z) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setDamage(int x, int y, int z, int dmg) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void modDamage(int x, int y, int z, int by) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getMeta(int x, int y, int z) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setMeta(int x, int y, int z) {
+		
+	}
+
+	@Override
+	public IChunk getChunk(int cx, int cy, int cz) {
+		return null;
+	}
+	
+}

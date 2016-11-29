@@ -1,0 +1,53 @@
+package com.redcontagion.util;
+
+public class Map3D<T> {
+	
+	@SuppressWarnings("unchecked")
+	private Map3D<T>.Map3DEntry[] entries = (Map3D<T>.Map3DEntry[]) new Map3D<?>.Map3DEntry[4096];
+	
+	protected int hash(int x, int y, int z) {
+		int hash = (x >> 4) & 0xF;
+		hash |= y & 0xF0;
+		hash |= (z << 4) & 0xF00;
+		return hash;
+	}
+	
+	private class Map3DEntry {
+		
+		public int x, y, z;
+		public T t;
+		public Map3DEntry next;
+		
+		public Map3DEntry(int x, int y, int z, T t) {
+			this.x = x;
+			this.y = y;
+			this.z = z;
+			this.t = t;
+		}
+		
+		@Override
+		public int hashCode() {
+			return hash(x,y,z);
+		}
+		
+	}
+	
+	public T get(int x, int y, int z) {
+		Map3DEntry e = entries[hash(x,y,z)];
+		if (e==null) return null;
+		do {
+			if (e.x == x && e.y == y && e.z == z) return e.t;
+			e = e.next;
+		} while(e != null);
+		return null;
+	}
+	
+	public void set(int x, int y, int z, T t) {
+		int hash = hash(x,y,z);
+		Map3DEntry e = entries[hash];
+		if (e!=null) {
+			
+		} else entries[hash] = new Map3DEntry(x, y, z, t);
+	}
+	
+}

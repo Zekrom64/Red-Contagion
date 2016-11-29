@@ -1,0 +1,16 @@
+package com.redcontagion.util;
+
+public class Map3D<T> {
+
+	private class Map3DEntry {
+		
+		public int x, y, z;
+		public T t;
+		
+	}
+	
+	public T get(int x, int y, int z) {
+		
+	}
+	
+}

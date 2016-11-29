@@ -1,0 +1,141 @@
+package com.redcontagion.world;
+
+import com.redcontagion.world.voxel.Block;
+import com.redcontagion.world.voxel.TileEntity;
+
+/** 
+ * 
+ * @author Zekrom_64
+ *
+ */
+public interface IWorld {
+	
+	/** A chunk is a 16x16x16 unit of the world.
+	 * 
+	 * @author Zekrom_64
+	 *
+	 */
+	public interface IChunk {
+		
+		public int[] get();
+		
+	}
+	
+	/** Gets the value of a block in the world, including all metadata.
+	 * 
+	 * @param x X coordinate
+	 * @param y Y coordinate
+	 * @param z Z coordinate
+	 * @return Full block value
+	 */
+	public int get(int x, int y, int z);
+	
+	/** Sets the value of a block in the world. including all metadata.
+	 * 
+	 * @param x X coordinate
+	 * @param y Y coordinate
+	 * @param z Z coordinate
+	 * @param data Full block value
+	 */
+	public void set(int x, int y, int z, int data);
+	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @return
+	 */
+	public int getBlockID(int x, int y, int z);
+	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param id
+	 */
+	public void setBlockID(int x, int y, int z, int id);
+	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @return
+	 */
+	public Block getBlock(int x, int y, int z);
+	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param b
+	 */
+	public void setBlock(int x, int y, int z, Block b);
+	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @return
+	 */
+	public int getDamage(int x, int y, int z);
+	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param dmg
+	 */
+	public void setDamage(int x, int y, int z, int dmg);
+	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param by
+	 */
+	public void modDamage(int x, int y, int z, int by);
+	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @return
+	 */
+	public int getMeta(int x, int y, int z);
+	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @param meta
+	 */
+	public void setMeta(int x, int y, int z, int meta);
+	
+	/**
+	 * 
+	 * @param cx
+	 * @param cy
+	 * @param cz
+	 * @return
+	 */
+	public IChunk getChunk(int cx, int cy, int cz);
+	
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param z
+	 * @return
+	 */
+	public TileEntity getTileEntity(int x, int y, int z);
+
+}

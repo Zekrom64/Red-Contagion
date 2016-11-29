@@ -1,0 +1,27 @@
+package com.redcontagion.util;
+
+public class Map3D<T> {
+	
+	private Map3DEntry[] entries = new Map3DEntry[4096];
+	
+	private class Map3DEntry {
+		
+		public int x, y, z;
+		public Object t;
+		public Map3DEntry next;
+		
+		@Override
+		public int hashCode() {
+			int hash = (x >> 4) & 0xF;
+			hash |= y & 0xF0;
+			hash |= (z << 4) & 0xF00;
+			return hash;
+		}
+		
+	}
+	
+	public T get(int x, int y, int z) {
+		
+	}
+	
+}

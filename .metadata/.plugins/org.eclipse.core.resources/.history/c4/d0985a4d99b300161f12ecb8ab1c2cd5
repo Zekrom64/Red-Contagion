@@ -1,0 +1,28 @@
+package com.redcontagion.util;
+
+public class Map3D<T> {
+	
+	@SuppressWarnings("unchecked")
+	private Map3D<T>.Map3DEntry[] entries = (Map3D<T>.Map3DEntry[]) new Map3D<?>.Map3DEntry[4096];
+	
+	private class Map3DEntry {
+		
+		public int x, y, z;
+		public T t;
+		public Map3DEntry next;
+		
+		@Override
+		public int hashCode() {
+			int hash = (x >> 4) & 0xF;
+			hash |= y & 0xF0;
+			hash |= (z << 4) & 0xF00;
+			return hash;
+		}
+		
+	}
+	
+	public T get(int x, int y, int z) {
+		
+	}
+	
+}

@@ -1,0 +1,31 @@
+package com.redcontagion.item;
+
+public class ItemStack {
+
+	private int size;
+	private int meta;
+	public final Item ITEM;
+	
+	public ItemStack(Item item) {
+		this(item, 1);
+	}
+	
+	public ItemStack(Item item, int count) {
+		this(item, count, 0);
+	}
+	
+	public ItemStack(Item item, int count, int meta) {
+		this.ITEM = item;
+		setSize(count);
+		this.meta = meta;
+	}
+	
+	public int getSize() {
+		return size;
+	}
+	
+	public void setSize(int size) {
+		this.size = Math.min(size, ITEM.getMaxStackSize(meta));
+	}
+	
+}
