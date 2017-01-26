@@ -1,9 +1,0 @@
-package com.redcontagion.world;
-
-public interface IWorld {
-	
-	public int get(int x, int y, int z);
-	
-	public void set(int x, int y, int z, int data);
-
-}

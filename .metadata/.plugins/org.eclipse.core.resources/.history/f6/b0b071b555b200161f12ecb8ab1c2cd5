@@ -1,5 +1,0 @@
-package com.redcontagion.world.voxel;
-
-public interface IWorldEditor {
-	
-}
