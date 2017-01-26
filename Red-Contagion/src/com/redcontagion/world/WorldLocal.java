@@ -59,7 +59,7 @@ public class WorldLocal implements IWorld {
 	@Override
 	public Block getBlock(int x, int y, int z) {
 		int id = getBlockID(x, y, z);
-		if (lastBlock != null && lastBlock.BLOCK_ID == id) return lastBlock;
+		if (lastBlock != null && lastBlock.blockID == id) return lastBlock;
 		lastBlock = Block.getBlock(id);
 		return lastBlock;
 	}
@@ -68,7 +68,7 @@ public class WorldLocal implements IWorld {
 	public void setBlock(int x, int y, int z, Block b) {
 		ChunkLocal chunk = getChunk0(x >> 4, y >> 4, z >> 4);
 		int index = (x & 0xF) | ((y << 4) & 0xF0) | ((z << 8) & 0xF00);
-		chunk.data[index] = (chunk.data[index] & 0xFFFF0000) | (b == null ? 0 : b.BLOCK_ID);
+		chunk.data[index] = (chunk.data[index] & 0xFFFF0000) | (b == null ? 0 : b.blockID);
 	}
 
 	@Override
@@ -119,6 +119,11 @@ public class WorldLocal implements IWorld {
 	@Override
 	public TileEntity getTileEntity(int x, int y, int z) {
 		return tileentities.get(x, y, z);
+	}
+
+	@Override
+	public boolean isRemote() {
+		return false;
 	}
 	
 }

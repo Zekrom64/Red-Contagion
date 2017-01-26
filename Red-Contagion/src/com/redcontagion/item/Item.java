@@ -1,5 +1,7 @@
 package com.redcontagion.item;
 
+import java.util.Arrays;
+
 /** The {@link Item} class defines the behavior for an item. Items are stored in {@link ItemStack}s with metadata that
  * can be used to specify more data about items, or have sub-items of an {@link Item} class.
  * 
@@ -8,6 +10,12 @@ package com.redcontagion.item;
  *
  */
 public class Item {
+	
+	// This is only used internally. DO NOT CALL THIS
+	public static void reset() {
+		Arrays.fill(items, null);
+		nextItem = 0;
+	}
 	
 	/** The maximum number of possible items */
 	public static final int MAX_ITEMS = 65535;
@@ -70,6 +78,34 @@ public class Item {
 	 */
 	public int getMaxStackSize(int meta) {
 		return 100;
+	}
+	
+	/** Gets the unlocalized name for the given item stack.
+	 * 
+	 * @param stack Item stack
+	 * @return Stack unlocalized name
+	 */
+	public String getUnlocalizedName(ItemStack stack) {
+		return UNLOCALIZED_NAME;
+	}
+	
+	/** Tests if the stack is damageable.
+	 * 
+	 * @param stack Item stack
+	 * @return If the stack is damageable
+	 */
+	public boolean isDamageable(ItemStack stack) {
+		return false;
+	}
+	
+	/** Attempts to damage the item stack.
+	 * 
+	 * @param stack Item stack to damage
+	 * @param dmg Amount to damage stack
+	 * @return Damaged stack
+	 */
+	public ItemStack damage(ItemStack stack, int dmg) {
+		return stack;
 	}
 	
 }

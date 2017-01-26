@@ -2,19 +2,13 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/zengine-base-0.1.jar"/>
-	<classpathentry kind="lib" path="lib/zengine-glfw-0.1.jar"/>
-	<classpathentry kind="lib" path="lib/zengine-opengl-0.1.jar"/>
-	<classpathentry kind="lib" path="lib/lwjgl.jar" sourcepath="lib/lwjgl-sources.jar">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="RedContagion-redist/natives"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="lib/lwjgl-glfw.jar" sourcepath="lib/lwjgl-glfw-sources.jar">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="RedContagion-redist/natives"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="lib/vecmath-1.5.2.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Red-Contagion-Launcher"/>
+	<classpathentry kind="lib" path="/Libraries/lib/jbullet.jar" sourcepath="/Libraries/libsrc/jbullet"/>
+	<classpathentry kind="lib" path="/Libraries/lib/lwjgl-glfw.jar" sourcepath="/Libraries/lib/lwjgl-glfw-sources.jar"/>
+	<classpathentry kind="lib" path="/Libraries/lib/lwjgl.jar" sourcepath="/Libraries/lib/lwjgl-sources.jar"/>
+	<classpathentry kind="lib" path="/Libraries/lib/vecmath-1.5.2.jar"/>
+	<classpathentry kind="lib" path="/Libraries/lib/zengine-base-0.1.jar"/>
+	<classpathentry kind="lib" path="/Libraries/lib/zengine-glfw-0.1.jar"/>
+	<classpathentry kind="lib" path="/Libraries/lib/zengine-opengl-0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

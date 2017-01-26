@@ -1,7 +1,7 @@
 package com.redcontagion;
 
-import com.zekrom_64.ze.base.backend.ZERenderBackend;
-import com.zekrom_64.ze.base.backend.ZERenderOutput;
+import com.zekrom_64.ze.base.backend.render.ZERenderBackend;
+import com.zekrom_64.ze.base.backend.render.ZERenderOutput;
 import com.zekrom_64.ze.gl.GL20RenderBackend;
 import com.zekrom_64.ze.gl.GLRenderOutput;
 

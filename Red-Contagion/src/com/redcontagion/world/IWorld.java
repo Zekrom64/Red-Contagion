@@ -22,6 +22,12 @@ public interface IWorld {
 		
 	}
 	
+	/** Tests if the world is remote (server side) or local (client side).
+	 * 
+	 * @return If the world is remote
+	 */
+	public boolean isRemote();
+	
 	/** Gets the value of a block in the world, including all metadata.
 	 * 
 	 * @param x X coordinate
@@ -121,21 +127,21 @@ public interface IWorld {
 	 */
 	public void setMeta(int x, int y, int z, int meta);
 	
-	/** Gets a chunk at chunk coordinates
+	/** Gets a chunk at the given chunk coordinates.
 	 * 
-	 * @param cx
-	 * @param cy
-	 * @param cz
-	 * @return
+	 * @param cx Chunk X coordinate
+	 * @param cy Chunk Y coordinate
+	 * @param cz Chunk Z coordinate
+	 * @return Chunk at coordinates
 	 */
 	public IChunk getChunk(int cx, int cy, int cz);
 	
-	/**
+	/** Gets a tile entity at the given coordinates
 	 * 
-	 * @param x
-	 * @param y
-	 * @param z
-	 * @return
+	 * @param x X coordinate
+	 * @param y Y coordinate
+	 * @param z Z coordinate
+	 * @return Tile entity
 	 */
 	public TileEntity getTileEntity(int x, int y, int z);
 

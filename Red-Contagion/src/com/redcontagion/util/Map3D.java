@@ -122,6 +122,13 @@ public class Map3D<T> {
 		}
 	}
 	
+	/** Removes a value from the 3D map. Returns the value previously stored, or <b>null</b> if the value did not exist.
+	 * 
+	 * @param x X coordinate
+	 * @param y Y coordinate
+	 * @param z Z coordinate
+	 * @return Previous value, or <b>null</b>
+	 */
 	public T remove(int x, int y, int z) {
 		int hash = hashFunc.hash(x,y,z);
 		Map3DEntry e = entries[hash];
@@ -140,6 +147,17 @@ public class Map3D<T> {
 			}
 		}
 		return null;
+	}
+	
+	public int size() {
+		int size = 0;
+		for(Map3DEntry e : entries) {
+			while(e != null) {
+				size++;
+				e = e.next;
+			}
+		}
+		return size;
 	}
 	
 }
